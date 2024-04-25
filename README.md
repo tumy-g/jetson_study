@@ -1,6 +1,6 @@
 # jetson_study
 
-# 卒業研究用リポジトリ。環境構築
+# 卒業研究用リポジトリ。環境構築済み
 
 NVIDIA Jetson Nano 4GB ram
 
