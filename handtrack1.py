@@ -12,7 +12,7 @@ from pprint import pprint
 class HandTracker(AbstDetector):
     def __init__(self, max_num_hands: int, min_detection_confidence: float, min_tracking_confidence: float) -> None:
         """初期化処理
-
+        
         Args:
             max_num_hands (int): 最大検出手数
             min_detection_confidence (float): 手検出モデルの最小信頼値
