@@ -1,8 +1,43 @@
+import time
+import sys
 import cv2
+import mediapipe as mp
+mp_drawing = mp.solutions.drawing_utils
+mp_hands = mp.solutions.hands
+
+video_source = "/dev/video0"
+def gstreamer_pipeline(
+    capture_width=3264,
+    capture_height=2464,
+    display_width=3264,
+    display_height=2464,
+    framerate=30,
+    flip_method=0,
+):
+    return (
+        "nvarguscamerasrc ! "
+        "video/x-raw(memory:NVMM), "
+        "width=(int)%d, height=(int)%d, "
+        "format=(string)NV12, framerate=(fraction)%d/1 ! "
+        "nvvidconv flip-method=%d ! "
+        "video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! "
+        "videoconvert ! "
+        "video/x-raw, format=(string)BGR ! appsink"
+        % (
+            capture_width,
+            capture_height,
+            framerate,
+            flip_method,
+            display_width,
+            display_height,
+        )
+    )
+
 
 # ウェブカメラのキャプチャを開始
-cap = cv2.VideoCapture(0)
-
+print("capture start")
+cap = cv2.VideoCapture(gstreamer_pipeline(display_width=640, display_height=360), cv2.CAP_GSTREAMER)
+time.sleep(2)
 # キャプチャがオープンしている間続ける
 while(cap.isOpened()):
     # フレームを読み込む
