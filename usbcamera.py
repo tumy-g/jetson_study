@@ -42,6 +42,9 @@ time.sleep(2)
 while(cap.isOpened()):
     # フレームを読み込む
     ret, frame = cap.read()
+    if not ret:
+        print("Camera Error.")
+        continue
     if ret == True:
         # フレームを表示
         cv2.imshow('Webcam Live', frame)
