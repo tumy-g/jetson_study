@@ -1,37 +1,60 @@
 import time
-
+import sys
 import cv2
 import mediapipe as mp
-
-video_source = "/dev/video1"  # Use a webcam
-# video_source = "test_video.mp4"  # Path to video file
-
-# Initialize MediaPipe Pose and Drawing utilities
-mp_pose = mp.solutions.pose
 mp_drawing = mp.solutions.drawing_utils
-pose = mp_pose.Pose()
+mp_hands = mp.solutions.hands
 
-# Open the video file
+video_source = "/dev/video0"
+def gstreamer_pipeline(
+    capture_width=3264,
+    capture_height=2464,
+    display_width=3264,
+    display_height=2464,
+    framerate=21,
+    flip_method=0,
+):
+    return (
+        "nvarguscamerasrc ! "
+        "video/x-raw(memory:NVMM), "
+        "width=(int)%d, height=(int)%d, "
+        "format=(string)NV12, framerate=(fraction)%d/1 ! "
+        "nvvidconv flip-method=%d ! "
+        "video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! "
+        "videoconvert ! "
+        "video/x-raw, format=(string)BGR ! appsink"
+        % (
+            capture_width,
+            capture_height,
+            framerate,
+            flip_method,
+            display_width,
+            display_height,
+        )
+    )
+
+
+# ウェブカメラのキャプチャを開始
+print("capture start")
 cap = cv2.VideoCapture(video_source)
 time.sleep(2)
-
-while cap.isOpened():
+# キャプチャがオープンしている間続ける
+while(cap.isOpened()):
+    # フレームを読み込む
     ret, frame = cap.read()
     if not ret:
+        print("Camera Error.")
+        
+    if ret == True:
+        # フレームを表示
+        cv2.imshow('Webcam Live', frame)
+
+        # 'q'キーが押されたらループから抜ける
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    else:
         break
 
-    # Convert the frame to RGB
-    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-    # Process the frame with MediaPipe Pose
-    result = pose.process(frame_rgb)
-
-    # Draw the pose landmarks on the frame
-    if result.pose_landmarks:
-        mp_drawing.draw_landmarks(frame, result.pose_landmarks, mp_pose.POSE_CONNECTIONS)
-
-    # Display the frame
-    cv2.imshow('MediaPipe Pose', frame)
-
-    # Exit if 'q' keypyt
-    cv2.waitKey(1)
+# キャプチャをリリースし、ウィンドウを閉じる
+cap.release()
+cv2.destroyAllWindows()
