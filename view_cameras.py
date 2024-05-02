@@ -7,3 +7,5 @@ for i in range(10):
         break
     print(f"Camera {i}: {cap.get(cv2.CAP_PROP_FRAME_WIDTH)}x{cap.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
     #cap.release()
+
+print("finish")
