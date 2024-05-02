@@ -36,7 +36,7 @@ def gstreamer_pipeline(
 
 # ウェブカメラのキャプチャを開始
 print("capture start")
-cap = cv2.VideoCapture(gstreamer_pipeline(display_width=640, display_height=360), cv2.CAP_GSTREAMER)
+cap = cv2.VideoCapture(1)
 time.sleep(2)
 # キャプチャがオープンしている間続ける
 while(cap.isOpened()):
