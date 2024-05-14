@@ -13,7 +13,7 @@ mp_hands = mp.solutions.hands
 
 cap = cv2.VideoCapture("/dev/video0")
 print("success capture")
-time.slep(2)
+time.sleep(2)
 
 #引数はとりあえず適当
 detector = hand_tracker.HandTracker(1, 0.5, 0.5)
