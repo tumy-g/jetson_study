@@ -7,6 +7,9 @@ import mediapipe as mp
 #配列の整理などができる
 from pprint import pprint
 
+#local
+from abst_detector import AbstDetector
+
 class HandTracker():
     def __init__(self, max_num_hands: int, min_detection_confidence: float, min_tracking_confidence: float) -> None:
         """初期化処理
