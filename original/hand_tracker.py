@@ -73,6 +73,7 @@ class HandTracker(AbstDetector):
             
             for con_pair in mp.solutions.hands.HAND_CONNECTIONS:
                 # 節点の始点と終点の座標を計算する．
+                #u:小指の始点？　v:小指の終点？
                 u = (int(np.array(landmark_buf)[con_pair[0]][0]*base_width), int(np.array(landmark_buf)[con_pair[0]][1]*base_height))
                 v = (int(np.array(landmark_buf)[con_pair[1]][0]*base_width), int(np.array(landmark_buf)[con_pair[1]][1]*base_height))
                 cv2.line(image, u, v, landmark_color[hand_label], 2)
@@ -80,6 +81,11 @@ class HandTracker(AbstDetector):
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
+
+                #座標をわかりやすくするため、格子を設置
+                cv2.line(image,(0,50),(640,50), (0,0,0), 3)
+                cv2.line(image,(0,100),(640,100), (0,0,0), 3)
+                cv2.line(image,(0,150),(640,150), (0,0,0), 3)
                 
             
             # ランドマークが欠損している場合は例外処理
