@@ -5,8 +5,6 @@ from abc import ABCMeta, abstractmethod
 
 import numpy as np
 
-
-
 class AbstDetector(metaclass=ABCMeta):
     @abstractmethod
     def detect(self, image: np.ndarray) -> bool:

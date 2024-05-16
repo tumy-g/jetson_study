@@ -82,11 +82,14 @@ class HandTracker(AbstDetector):
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
 
-                #座標をわかりやすくするため、格子を設置
-                cv2.line(image,(0,50),(640,50), (0,0,0), 3)
-                cv2.line(image,(0,100),(640,100), (0,0,0), 3)
-                cv2.line(image,(0,150),(640,150), (0,0,0), 3)
-                
+            #座標をわかりやすくするため、格子を設置
+            while True:
+                for i in range(9):
+                    cv2.line(image,(0,50*i),(640,50*i), (0,0,0), 2)
+                key = cv2.waitKey(1) & 0xFF
+                if key == ord('q'):
+                    print("hoge")
+                break
             
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:
