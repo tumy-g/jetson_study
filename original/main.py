@@ -15,8 +15,8 @@ cap = cv2.VideoCapture("/dev/video0")
 print("success capture")
 time.sleep(2)
 
-#引数はとりあえず適当
-detector = hand_tracker.HandTracker(1, 0.5, 0.5)
+#引数はとりあえず適当 (1, 0.5, 0.5)
+detector = hand_tracker.HandTracker(1, 1, 1)
 print("suceess handtrack")
 
 while cap.isOpened():
@@ -30,7 +30,7 @@ while cap.isOpened():
     if detector.detect(image):
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
     
-    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (480, 640)))
+    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (640, 480)))
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
