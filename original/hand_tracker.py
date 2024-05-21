@@ -79,13 +79,15 @@ class HandTracker(AbstDetector):
                 cv2.line(image, u, v, landmark_color[hand_label], 2)
                 print(mp.solutions.hands.HAND_CONNECTIONS)
                 if con_pair in [(5,6), (6,7), (9,10), (10,11) ,(17,18), (18,19)]:
-                    match con_pair:
-                        case (5,6):
-                            print("人差し指：",(u,v))
-                        case (9,10):
-                            print("中指：",(u,v))
-                        case (17,18):
-                            print("小指：",(u,v))
+                    # match con_pair:
+                    #     case (5,6):
+                            
+                    #     case (9,10):
+                    #         print("中指：",(u,v))
+                    #     case (17,18):
+                    #         print("小指：",(u,v))
+                    if con_pair in (5,6):
+                        print("人差し指：",(u,v))
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
