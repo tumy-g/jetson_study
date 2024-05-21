@@ -108,9 +108,9 @@ class HandTracker(AbstDetector):
             thickness=2,
             lineType=cv2.LINE_AA)
         
-        while True:
-            for i in range(1,9):
-                cv2.line(image,(0,50*i),(640,50*i), (0,200*(2%i),0), 1)
-                cv2.line(image,(50*i,0),(50*i, 640),(0,200*(2%i),0),1)
+        # while True:
+        #     for i in range(1,9):
+        #         cv2.line(image,(0,50*i),(640,50*i), (0,200*(2%i),0), 1)
+        #         cv2.line(image,(50*i,0),(50*i, 640),(0,200*(2%i),0),1)
 
         return (image, landmark_dict)
