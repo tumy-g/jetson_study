@@ -84,7 +84,7 @@ class HandTracker(AbstDetector):
 
             #座標をわかりやすくするため、格子を設置
             while True:
-                for i in range(9):
+                for i in range(1,9):
                     cv2.line(image,(0,50*i),(640,50*i), (0,200*(2%i),0), 1)
                     cv2.line(image,(50*i,0),(50*i, 640),(0,200*(2%i),0),1)
             
