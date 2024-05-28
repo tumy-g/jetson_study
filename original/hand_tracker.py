@@ -83,9 +83,9 @@ class HandTracker(AbstDetector):
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
                     if con_pair in [(5,6)]:
-                        print("x:",hand_landmarks.landmark[8].x)#landmark0(手首)の3次元座標を表示
-                        print("y:",hand_landmarks.landmark[8].y)#landmark0(手首)の3次元座標を表示
-                        print("z:",hand_landmarks.landmark[8].z)#landmark0(手首)の3次元座標を表示
+                        print("x:",hand_landmarks.landmark[8].x * base_width)#landmark0(手首)の3次元座標を表示
+                        print("y:",hand_landmarks.landmark[8].y * base_height)#landmark0(手首)の3次元座標を表示
+                        print("z:",hand_landmarks.landmark[8].z * 100)#landmark0(手首)の3次元座標を表示
 
                         print("人差し指：",u,v)
                     # elif con_pair in [(9,10)]:
