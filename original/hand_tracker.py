@@ -85,12 +85,12 @@ class HandTracker(AbstDetector):
                             continue
                         cv2.line(image, u, v, landmark_color["stress"], 8)
                         if con_pair in [(5,6)]:
-                            print(self.results.multi_hand_landmarks)
+                            print(self.results.multi_hand_landmarks[1])
                             print("人差し指：",u,v)
-                        elif con_pair in [(9,10)]:
-                            print("中指：", u,v)
-                        elif con_pair in [(17,18)]:
-                            print("小指：", u, v)
+                        # elif con_pair in [(9,10)]:
+                        #     print("中指：", u,v)
+                        # elif con_pair in [(17,18)]:
+                        #     print("小指：", u, v)
             
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:
