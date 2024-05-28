@@ -78,19 +78,17 @@ class HandTracker(AbstDetector):
                 u = (int(np.array(landmark_buf)[con_pair[0]][0]*base_width), int(np.array(landmark_buf)[con_pair[0]][1]*base_height))
                 v = (int(np.array(landmark_buf)[con_pair[1]][0]*base_width), int(np.array(landmark_buf)[con_pair[1]][1]*base_height))
                 cv2.line(image, u, v, landmark_color[hand_label], 2)
-                key = cv2.waitKey(1)
-                if key == 32:
-                    if con_pair in [(5,6), (6,7), (9,10), (10,11) ,(17,18), (18,19)]:
-                        if hand_label == 'Left':
-                            continue
-                        cv2.line(image, u, v, landmark_color["stress"], 8)
-                        if con_pair in [(5,6)]:
-                            print(self.results.multi_hand_landmarks[1])
-                            print("人差し指：",u,v)
-                        # elif con_pair in [(9,10)]:
-                        #     print("中指：", u,v)
-                        # elif con_pair in [(17,18)]:
-                        #     print("小指：", u, v)
+                if con_pair in [(5,6), (6,7), (9,10), (10,11) ,(17,18), (18,19)]:
+                    if hand_label == 'Left':
+                        continue
+                    cv2.line(image, u, v, landmark_color["stress"], 8)
+                    if con_pair in [(5,6)]:
+                        print(self.results.multi_hand_landmarks[0])
+                        print("人差し指：",u,v)
+                    # elif con_pair in [(9,10)]:
+                    #     print("中指：", u,v)
+                    # elif con_pair in [(17,18)]:
+                    #     print("小指：", u, v)
             
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:
