@@ -86,7 +86,7 @@ class HandTracker(AbstDetector):
                         print("人差し指：",u,v)
                         print("x:",hand_landmarks.landmark[5].x * base_width)#landmark0(手首)の3次元座標を表示
                         print("y:",hand_landmarks.landmark[5].y * base_height)#landmark0(手首)の3次元座標を表示
-                        print("z:",hand_landmarks.landmark[5].z * 100, end="\n")#landmark0(手首)の3次元座標を表示
+                        print("z:",hand_landmarks.landmark[5].z * 1000, end="\n\n")#landmark0(手首)の3次元座標を表示
 
                     # elif con_pair in [(9,10)]:
                     #     print("中指：", u,v)
