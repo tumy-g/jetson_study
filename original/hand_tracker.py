@@ -40,9 +40,8 @@ class HandTracker(AbstDetector):
         except Exception as e:
             print("Error: hand_tracker.py 39line")
         finally:
-            print("?座標",self.results.multi_hand_landmarks[0])
+            print("?座標",self.results.multi_hand_landmarks)
         return True if self.results.multi_hand_landmarks is not None else False
-
 
     def draw(self, image: np.ndarray) -> tuple:
         """一枚のフレーム画像に対して手の検出(描画)し，ランドマーク情報を返す．
