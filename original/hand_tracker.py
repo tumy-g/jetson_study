@@ -39,8 +39,8 @@ class HandTracker(AbstDetector):
             self.results = self.tracker.process(image)
         except Exception as e:
             print("Error: hand_tracker.py 39line")
-        finally:
-            print("?座標",self.results.multi_hand_landmarks)
+        # finally:
+        #     print("?座標",self.results.multi_hand_landmarks)
         return True if self.results.multi_hand_landmarks is not None else False
 
     def draw(self, image: np.ndarray) -> tuple:
@@ -85,6 +85,7 @@ class HandTracker(AbstDetector):
                             continue
                         cv2.line(image, u, v, landmark_color["stress"], 8)
                         if con_pair in [(5,6)]:
+                            print(self.results.multi_hand_landmarks)
                             print("人差し指：",u,v)
                         elif con_pair in [(9,10)]:
                             print("中指：", u,v)
