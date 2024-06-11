@@ -37,6 +37,7 @@ while cap.isOpened():
         cv2.imwrite('../img_sacrifice/screenshot.png', tmp_image)
     if key == ord('q'):
         print("quit program")
+        print(tmp_landmark_dict)
         break
 
 cap.release()
