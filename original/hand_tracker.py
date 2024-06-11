@@ -15,7 +15,6 @@ def formatDict(inputList):
     for i, sublist in enumerate(inputList):
         result[str(i+1)] = {'x':sublist[0],'y':sublist[1],'z':sublist[2]}
 
-    print(result)
     return result
 
 class HandTracker(AbstDetector):
