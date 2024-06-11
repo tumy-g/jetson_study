@@ -10,13 +10,13 @@ from pprint import pprint
 #local
 from abst_detector import AbstDetector
 
-def formatDict(inputDict):
-    newDict = {}
-    for key in inputDict:
-        newDict[key] = inputDict[key]
+def formatDict(inputList):
+    result = {}
+    for i, sublist in enumerate(inputList):
+        result[str(i+1)] = {'x':sublist[0],'y':sublist[1],'z':sublist[2]}
 
-    print(newDict)
-    return newDict
+    print(result)
+    return result
 
 class HandTracker(AbstDetector):
     def __init__(self, max_num_hands: int, min_detection_confidence: float, min_tracking_confidence: float) -> None:
