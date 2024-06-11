@@ -12,8 +12,8 @@ from abst_detector import AbstDetector
 
 def formatDict(inputDict):
     newDict = {}
-    for i in inputDict:
-        newDict = {f"{i}": inputDict[i]}
+    for key in inputDict:
+        newDict[key] = inputDict[key]
 
     print(newDict)
     return newDict
