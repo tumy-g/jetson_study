@@ -13,7 +13,7 @@ from abst_detector import AbstDetector
 def formatDict(inputList):
     result = {}
     for i, sublist in enumerate(inputList):
-        result[str(i+1)] = {'x':sublist[0],'y':sublist[1],'z':sublist[2]}
+        result[str(i+1)] = {'x':sublist[0],'y':sublist[1]}
 
     return result
 
