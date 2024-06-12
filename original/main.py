@@ -6,6 +6,7 @@ import mediapipe as mp
 
 #local files
 import hand_tracker
+import angles
 
 #初期設定
 mp_drawing = mp.solutions.drawing_utils
