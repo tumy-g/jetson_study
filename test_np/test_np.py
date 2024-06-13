@@ -1,8 +1,8 @@
 import numpy as np
 
 #ベクトルの用意
-A = np.array(1,0)
-B = np.array(0,1)
+A = np.array([1,0])
+B = np.array([0,1])
 
 def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
