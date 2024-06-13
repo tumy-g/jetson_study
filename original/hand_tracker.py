@@ -95,8 +95,10 @@ class HandTracker(AbstDetector):
             if len(landmark_buf) % 21 != 0:
                 print("ランドマーク欠損の恐れあり")
             
+            #正規化表現のまま使用するならこっち
             #landmark_dict[hand_label] = landmark_buf
-            landmark_dict[hand_label] = angles.formatDict(landmark_buf)
+            #正規化から復元し、用いるのならこちら
+            landmark_dict[hand_label] = angles.formatDict(landmark_buf, base_width, base_height)
 
         cv2.putText(image,
             text='Right',
