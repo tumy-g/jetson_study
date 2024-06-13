@@ -17,13 +17,6 @@ def formatDict(inputList,width,height):
 
     return result
 
-def change_2D(input_list:list):
-    '''
-    3次元座標をz座標を取り除いて2次元座標にして返す
-    '''
-    result = [sublist[:2] for sublist in input_list]
-    return result
-
 class HandTracker(AbstDetector):
     def __init__(self, max_num_hands: int, min_detection_confidence: float, min_tracking_confidence: float) -> None:
         """初期化処理
@@ -97,15 +90,10 @@ class HandTracker(AbstDetector):
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
                     if con_pair in [(5,6)]:
-                        print("lamdmark[7]:",u,v)
+                        print("lamdmark[7]:")
                         print("x:",hand_landmarks.landmark[7].x * base_width)#landmark[n]の3次元座標を表示
                         print("y:",hand_landmarks.landmark[7].y * base_height)#landmark[n]の3次元座標を表示
                         print("z:",hand_landmarks.landmark[7].z * 1000, end="\n\n")#landmark[n]の3次元座標を表示
-
-                    # elif con_pair in [(9,10)]:
-                    #     print("中指：", u,v)
-                    # elif con_pair in [(17,18)]:
-                    #     print("小指：", u, v)
             
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:

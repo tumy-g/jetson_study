@@ -1,11 +1,17 @@
 import numpy as np
 
-def format_dict_to_ndarray(input_list:list):
+def change_2D(input_list:list):
     '''
-    [100,100,100]をnp.array([100,100])にして返す
-    Args:
-        input_dict:
+    3次元座標をz座標を取り除いて2次元座標にして返す
     '''
+    result = [sublist[:2] for sublist in input_list]
+    return result
+
+def resotore_list(input_list:list):
+    '''
+    change_2D関数で低次元化したリストは正規化されているので復元する
+    '''
+
 
 def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
