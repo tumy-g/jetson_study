@@ -7,12 +7,6 @@ def change_2D(input_list:list):
     result = [sublist[:2] for sublist in input_list]
     return result
 
-def resotore_list(input_list:list):
-    '''
-    change_2D関数で低次元化したリストは正規化されているので復元する
-    '''
-
-
 def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
     2つのベクトル(2次元)からなす角を求めて返す
