@@ -13,13 +13,6 @@ from pprint import pprint
 #local
 from abst_detector import AbstDetector
 
-def formatDict(inputList,width,height):
-    result = {}
-    for i, sublist in enumerate(inputList):
-        result[str(i)] = {'x':sublist[0]*width,'y':sublist[1]*height}
-
-    return result
-
 class HandTracker(AbstDetector):
     def __init__(self, max_num_hands: int, min_detection_confidence: float, min_tracking_confidence: float) -> None:
         """初期化処理
@@ -102,8 +95,7 @@ class HandTracker(AbstDetector):
             if len(landmark_buf) % 21 != 0:
                 print("ランドマーク欠損の恐れあり")
             
-            landmark_dict[hand_label] = formatDict(landmark_buf,base_width, base_height)
-            #landmark_dict[hand_label] = landmark_buf
+            landmark_dict[hand_label] = landmark_buf
 
         cv2.putText(image,
             text='Right',
