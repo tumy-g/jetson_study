@@ -125,5 +125,5 @@ class HandTracker(AbstDetector):
             thickness=2,
             lineType=cv2.LINE_AA)
         # landmark_dictを返しているほうが通常。
-        #return (image, landmark_buf)
-        return (image, landmark_dict)
+        return (image, landmark_buf)
+        #return (image, landmark_dict)
