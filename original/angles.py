@@ -58,7 +58,7 @@ def calc_angles(vectors):
     dots = []#内積達
     thetas = []#なす角たち
 
-    for i in (len(vectors)-1):
+    for i in range((len(vectors)-1)):
         #内積
         dot = np.inner(vectors[i], vectors[i+1])
         dots.append(dot)
