@@ -17,6 +17,13 @@ def formatDict(inputList,width,height):
 
     return result
 
+def change_2D(input_list:list):
+    '''
+    3次元座標をz座標を取り除いて2次元座標にして返す
+    '''
+    result = [sublist[:2] for sublist in input_list]
+    return result
+
 class HandTracker(AbstDetector):
     def __init__(self, max_num_hands: int, min_detection_confidence: float, min_tracking_confidence: float) -> None:
         """初期化処理
@@ -125,5 +132,5 @@ class HandTracker(AbstDetector):
             thickness=2,
             lineType=cv2.LINE_AA)
         # landmark_dictを返しているほうが通常。
-        return (image, landmark_buf)
+        return (image, change_2D(landmark_buf))
         #return (image, landmark_dict)

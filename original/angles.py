@@ -1,8 +1,8 @@
 import numpy as np
 
-def format_dict_to_ndarray(input_dict:dict):
+def format_dict_to_ndarray(input_list:list):
     '''
-    {'x':100,'y':100}をnp.array([100,100])にして返す
+    [100,100,100]をnp.array([100,100])にして返す
     Args:
         input_dict:
     '''
