@@ -1,9 +1,5 @@
 import numpy as np
 
-#ベクトルの用意
-A = np.array([1,0])
-B = np.array([0,1])
-
 def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
     2つのベクトル(2次元)からなす角を求めて返す
@@ -22,3 +18,11 @@ def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     #なす角の計算
     theta = np.arccos(dot/(s*t))
     print(f"なす角:{theta}")
+
+def Main():
+    #ベクトルの用意
+    A = np.array([1,0])
+    B = np.array([0,1])
+    get_angle_vec(A,B)
+
+Main()
