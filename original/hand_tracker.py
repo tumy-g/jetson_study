@@ -4,6 +4,9 @@ import cv2
 import numpy as np
 import mediapipe as mp
 
+#ローカルファイル
+import angles
+
 #配列の整理などができる
 from pprint import pprint
 
