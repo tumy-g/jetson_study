@@ -33,16 +33,13 @@ while cap.isOpened():
     
     cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
 
-    print(len(angles.get_angles(tmp_landmark_dict)))
-    print(angles.get_angles(tmp_landmark_dict)[6])
-
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
         cv2.imwrite('../img_sacrifice/screenshot.png', tmp_image)
     if key == ord('q'):
         print("quit program")
-        print("lanfmarks:",tmp_landmark_dict)
-        print("angles:",angles.get_angles(tmp_landmark_dict))
+        print("lanfmarks:",len(tmp_landmark_dict),tmp_landmark_dict)
+        print("angles:",len(angles.get_angles(tmp_landmark_dict)),angles.get_angles(tmp_landmark_dict))
         break
 
 cap.release()
