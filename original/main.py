@@ -39,7 +39,7 @@ while cap.isOpened():
     if key == ord('q'):
         print("quit program")
         print("lanfmarks:",len(tmp_landmark_dict),tmp_landmark_dict)
-        #print("vectors",angles.calc_vectors)
+        print("vectors",angles.calc_vectors(tmp_landmark_dict))
         print("angles:",len(angles.get_angles(tmp_landmark_dict)),angles.get_angles(tmp_landmark_dict))
         break
 
