@@ -87,7 +87,7 @@ class HandTracker(AbstDetector):
                     cv2.line(image, u, v, landmark_color["stress"], 8)
                     cv2.putText(image,
                                 text="HOGE",
-                                org=(20,20),
+                                org=u,
                                 fontFace=cv2.FONT_HERSHEY_DUPLEX,
                                 fontScale=1.0,
                                 color=(255,255,255),
