@@ -88,10 +88,10 @@ class HandTracker(AbstDetector):
                     cv2.putText(image,
                                 text="HOGE",
                                 org=u,
-                                fontFace=cv2.FONT_HERSHEY_DUPLEX,
-                                fontScale=1.0,
+                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                                fontScale=0.3,
                                 color=(255,255,255),
-                                thickness=2,
+                                thickness=1,
                                 lineType=cv2.LINE_4)
                     # if con_pair in [(5,6)]:
                     #     print("lamdmark[7]:")
