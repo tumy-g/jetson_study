@@ -38,7 +38,8 @@ while cap.isOpened():
         cv2.imwrite('../img_sacrifice/screenshot.png', tmp_image)
     if key == ord('q'):
         print("quit program")
-        print(angles.get_angles(tmp_landmark_dict)[6])
+        print("lanfmarks:",tmp_landmark_dict)
+        print("angles:",angles.get_angles(tmp_landmark_dict))
         break
 
 cap.release()
