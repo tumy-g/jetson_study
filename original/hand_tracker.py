@@ -85,6 +85,7 @@ class HandTracker(AbstDetector):
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
+                    cv2.putText(image,"HOGE",(u+20,v+20),cv2.FONT_HERSHEY_DUPLEX, 1.0,(255,255,255))
                     # if con_pair in [(5,6)]:
                     #     print("lamdmark[7]:")
                     #     print("x:",hand_landmarks.landmark[7].x * base_width)#landmark[n]の3次元座標を表示
