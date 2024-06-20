@@ -85,7 +85,6 @@ class HandTracker(AbstDetector):
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
-                    print(landmark_buf[3])
                     if con_pair in [(5,6)]:
                         cv2.putText(image,
                                 text=str(angles.get_angles(landmark_buf)[6]*100)[0:5],
@@ -168,5 +167,6 @@ class HandTracker(AbstDetector):
             thickness=2,
             lineType=cv2.LINE_AA)
         # landmark_dictを返しているほうが通常。
-        return (image, angles.change_2D(landmark_buf))
-        #return (image, landmark_dict)
+
+        #return (image, angles.change_2D(landmark_buf))
+        return (image, landmark_buf)
