@@ -17,9 +17,9 @@ def change_2D(input_list:list):
 
 def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
-    2つのベクトル(2次元)からなす角を求めて返す
+    2つのベクトルからなす角を求めて返す
     Arges:
-        vec1,vec2:ベクトル np.array([1,0])のような形式
+        vec1,vec2:ベクトル np.array([1,0,0])のような形式
     '''
     #内積を計算
     dot = np.inner(vec1,vec2)
@@ -72,7 +72,7 @@ def get_angles(landmarks:list):
     '''
     関数のネストになるのを回避するため、この関数を呼び出すだけでいいように
     Args:
-        landmarks: list2D.txt形式のリスト。landmarks(2次元)の座標がまとめられている
+        landmarks: landmark_buf。2次元でも3次元でも対応可能
     Return:
         result: 各ベクトルのなす角(計20個)をまとめたリスト
     '''
