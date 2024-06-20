@@ -85,14 +85,6 @@ class HandTracker(AbstDetector):
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
-                    # cv2.putText(image,
-                    #             text=str(u),
-                    #             org=u,
-                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                    #             fontScale=0.3,
-                    #             color=(0,0,0),
-                    #             thickness=1,
-                    #             lineType=cv2.LINE_4)
                     if con_pair in [(5,6)]:
                         cv2.putText(image,
                                 text=str(angles.get_angles(landmark_buf)[6]*100)[0:5],
@@ -147,7 +139,7 @@ class HandTracker(AbstDetector):
                                 color=(0,0,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
-            
+
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:
                 print("ランドマーク欠損の恐れあり")
