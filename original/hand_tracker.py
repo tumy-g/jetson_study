@@ -146,27 +146,6 @@ class HandTracker(AbstDetector):
             
             #正規化表現のまま使用するならこっち
             landmark_dict[hand_label] = landmark_buf
-            #正規化から復元し、用いるのならこちら
-            #landmark_dict[hand_label] = angles.formatDict(landmark_buf, base_width, base_height)
-
-        cv2.putText(image,
-            text='Right',
-            org=(10, 585),
-            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-            fontScale=1.0,
-            color=(0, 255, 0),
-            thickness=2,
-            lineType=cv2.LINE_AA)
-        
-        cv2.putText(image,
-            text='Left',
-            org=(120, 585),
-            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-            fontScale=1.0,
-            color=(255, 0, 0),
-            thickness=2,
-            lineType=cv2.LINE_AA)
-        # landmark_dictを返しているほうが通常。
 
         #return (image, angles.change_2D(landmark_buf))
         return (image, landmark_buf)
