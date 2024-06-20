@@ -23,6 +23,7 @@ def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
     #内積を計算
     dot = np.inner(vec1,vec2)
+    print(vec1)
     print(f"内積:{dot}")
     
     #各ベクトルの長さを計算
