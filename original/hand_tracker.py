@@ -63,13 +63,12 @@ class HandTracker(AbstDetector):
         landmark_dict = {'Left':[], 'Right':[]}  # landmark_listをdict型で左手右手を取り出しやすいようにする
         landmark_color = {'Left':(205,205,205), 'Right':(205,205,205), "stress":(0,0,255)}
 
+         print("HOGE!")
+
         for i, (hand_landmarks, handedness) in enumerate(zip(self.results.multi_hand_landmarks, self.results.multi_handedness)):
             landmark_buf = []
             # 画像を左右反転していなく右手と左手が逆になるので修正する
             hand_label = 'Left' if (handedness.classification[0].label)=='Right' else 'Right'
-
-            print("HOGE!")
-            print("HAGE!")
 
             for j, landmark in enumerate(hand_landmarks.landmark):
                 landmark_buf.append([landmark.x, landmark.y, landmark.z])
