@@ -37,8 +37,8 @@ while cap.isOpened():
     if key == ord('s'):
         cv2.imwrite('../img_sacrifice/screenshot.png', tmp_image)
     if key == ord('q'):
-        print("quit program")
-        print("lanfmarks:",len(tmp_landmark_dict),tmp_landmark_dict)
+        print("Quit program")
+        print("landmarks:",len(tmp_landmark_dict),tmp_landmark_dict)
         print("vectors",angles.calc_vectors(tmp_landmark_dict))
         print("angles:",len(angles.get_angles(tmp_landmark_dict)),angles.get_angles(tmp_landmark_dict))
         break
