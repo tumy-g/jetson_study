@@ -69,6 +69,7 @@ class HandTracker(AbstDetector):
             hand_label = 'Left' if (handedness.classification[0].label)=='Right' else 'Right'
 
             print("HOGE!")
+            print("HAGE!")
 
             for j, landmark in enumerate(hand_landmarks.landmark):
                 landmark_buf.append([landmark.x, landmark.y, landmark.z])
