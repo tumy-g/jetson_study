@@ -7,6 +7,7 @@ import mediapipe as mp
 #local files
 import hand_tracker
 import angles
+import calc_equation
 
 #初期設定
 mp_drawing = mp.solutions.drawing_utils
@@ -32,6 +33,12 @@ while cap.isOpened():
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
     
     cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
+
+    print(calc_equation.formula(
+        angles.get_angles(tmp_landmark_dict)[6],
+        angles.get_angles(tmp_landmark_dict)[10],
+        angles.get_angles(tmp_landmark_dict)[18])
+    )
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):

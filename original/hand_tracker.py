@@ -6,7 +6,6 @@ import mediapipe as mp
 
 #ローカルファイル
 import angles
-import calc_equation
 
 #配列の整理などができる
 from pprint import pprint
@@ -62,8 +61,6 @@ class HandTracker(AbstDetector):
 
         landmark_dict = {'Left':[], 'Right':[]}  # landmark_listをdict型で左手右手を取り出しやすいようにする
         landmark_color = {'Left':(205,205,205), 'Right':(205,205,205), "stress":(0,0,255)}
-
-        print("HOGE!")
 
         for i, (hand_landmarks, handedness) in enumerate(zip(self.results.multi_hand_landmarks, self.results.multi_handedness)):
             landmark_buf = []
