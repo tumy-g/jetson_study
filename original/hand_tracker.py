@@ -82,17 +82,21 @@ class HandTracker(AbstDetector):
                 u = (int(np.array(landmark_buf)[con_pair[0]][0]*base_width), int(np.array(landmark_buf)[con_pair[0]][1]*base_height))
                 v = (int(np.array(landmark_buf)[con_pair[1]][0]*base_width), int(np.array(landmark_buf)[con_pair[1]][1]*base_height))
                 cv2.line(image, u, v, landmark_color[hand_label], 2)#手のラインを描画
-                cv2.putText(image,
-                            text=str(calc_equation.formula(
+                # cv2.putText(image,
+                #             text=str(calc_equation.formula(
+                #                 angles.get_angles(landmark_buf)[6],
+                #                 angles.get_angles(landmark_buf)[10],
+                #                 angles.get_angles(landmark_buf)[18])),
+                #             org = (0,0),
+                #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                #             fontScale=0.5,
+                #             color=(10,10,10),
+                #             thickness=1,
+                #             lineType=cv2.LINE_8)
+                print(calc_equation.formula(
                                 angles.get_angles(landmark_buf)[6],
                                 angles.get_angles(landmark_buf)[10],
-                                angles.get_angles(landmark_buf)[18])),
-                            org = (0,0),
-                            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                            fontScale=0.5,
-                            color=(10,10,10),
-                            thickness=1,
-                            lineType=cv2.LINE_8)
+                                angles.get_angles(landmark_buf)[18]))
                 if con_pair in [(5,6), (6,7), (9,10), (10,11) ,(17,18), (18,19)]:
                     if hand_label == 'Left':
                         continue
