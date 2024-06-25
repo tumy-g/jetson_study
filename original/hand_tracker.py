@@ -85,60 +85,60 @@ class HandTracker(AbstDetector):
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 8)
-                    if con_pair in [(5,6)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[6]*100)[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
-                                color=(0,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(6,7)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[7]*100)[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
-                                color=(0,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(9,10)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[10]*100)[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
-                                color=(0,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(10,11)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[11]*100)[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
-                                color=(0,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(17,18)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[18]*100)[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
-                                color=(0,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(18,19)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[19]*100)[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
-                                color=(0,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
+                    # if con_pair in [(5,6)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[6]*100)[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.3,
+                    #             color=(0,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(6,7)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[7]*100)[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.3,
+                    #             color=(0,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(9,10)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[10]*100)[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.3,
+                    #             color=(0,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(10,11)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[11]*100)[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.3,
+                    #             color=(0,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(17,18)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[18]*100)[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.3,
+                    #             color=(0,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(18,19)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[19]*100)[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.3,
+                    #             color=(0,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
 
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:
