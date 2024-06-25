@@ -93,10 +93,10 @@ class HandTracker(AbstDetector):
                 #             color=(10,10,10),
                 #             thickness=1,
                 #             lineType=cv2.LINE_8)
-                # print(calc_equation.formula(
-                #                 angles.get_angles(landmark_buf)[6],
-                #                 angles.get_angles(landmark_buf)[10],
-                #                 angles.get_angles(landmark_buf)[18]))
+                print(calc_equation.formula(
+                                angles.get_angles(landmark_buf)[6],
+                                angles.get_angles(landmark_buf)[10],
+                                angles.get_angles(landmark_buf)[18]))
                 if con_pair in [(5,6), (6,7), (9,10), (10,11) ,(17,18), (18,19)]:
                     if hand_label == 'Left':
                         continue
