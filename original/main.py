@@ -31,14 +31,13 @@ while cap.isOpened():
 
     if detector.detect(image):
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
-    
-    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
-
-    print(calc_equation.formula(
+        print(calc_equation.formula(
         angles.get_angles(tmp_landmark_dict)[6],
         angles.get_angles(tmp_landmark_dict)[10],
         angles.get_angles(tmp_landmark_dict)[18])
-    )
+        )
+    
+    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
