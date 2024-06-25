@@ -58,13 +58,19 @@ def calc_angles(vectors):
     dots = []#内積達
     thetas = []#なす角たち
 
-    for i in range((len(vectors)-1)):
+    for i in range((len(vectors)-2)):
+        A = vectors[i]
+        B = vectors[i+1]
+        C = vectors[i+2]
+
+        BA = A - B
+        BC = C - B
         #内積
-        dot = np.inner(vectors[i], vectors[i+1])
+        dot = np.inner(BA, BC)
         dots.append(dot)
         #ベクトルの長さ(norm)
-        norm1 = np.linalg.norm(vectors[i])
-        norm2 = np.linalg.norm(vectors[i+1])
+        norm1 = np.linalg.norm(BA)
+        norm2 = np.linalg.norm(BC)
         #なす角
         theta = np.arccos(dot/(norm1*norm2))
         thetas.append(theta)
