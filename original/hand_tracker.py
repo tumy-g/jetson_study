@@ -87,7 +87,7 @@ class HandTracker(AbstDetector):
                     cv2.line(image, u, v, landmark_color["stress"], 10)
                     if con_pair in [(6,7)]:
                         cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[6])[0:5],
+                                text=str(angles.get_angles(angles.change_2D(landmark_buf))[6])[0:5],
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                                 fontScale=0.3,
