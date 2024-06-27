@@ -18,10 +18,9 @@ print("success capture")
 time.sleep(2)
 
 #引数によって検出する手の数、信頼度等を設定する
-#detector = hand_tracker.HandTracker(1, 1, 1)
 detector = hand_tracker.HandTracker(
     min_detection_confidence=0.7,
-    min_tracking_confidence=0.7,
+    min_tracking_confidence=1,
     max_num_hands=1
 )
 
