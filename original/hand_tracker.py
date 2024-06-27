@@ -73,14 +73,14 @@ class HandTracker(AbstDetector):
                 # 円を描く用の座標
                 x = min(int(landmark.x * base_width), base_width - 1)
                 y = min(int(landmark.y * base_height), base_height - 1)
-                cv2.circle(image, (x, y), 4, landmark_color[hand_label], 5)
+                cv2.circle(image, (x, y), 3, landmark_color[hand_label], 4)
             
             for con_pair in mp.solutions.hands.HAND_CONNECTIONS:
                 # 節点の始点と終点の座標を計算する．
                 #u:小指の始点？　v:小指の終点？
                 u = (int(np.array(landmark_buf)[con_pair[0]][0]*base_width), int(np.array(landmark_buf)[con_pair[0]][1]*base_height))
                 v = (int(np.array(landmark_buf)[con_pair[1]][0]*base_width), int(np.array(landmark_buf)[con_pair[1]][1]*base_height))
-                cv2.line(image, u, v, landmark_color[hand_label], 2)#手のラインを描画
+                cv2.line(image, u, v, landmark_color[hand_label], 1)#手のラインを描画
                 if con_pair in [(5,6), (6,7), (9,10), (10,11) ,(17,18), (18,19)]:
                     if hand_label == 'Left':
                         continue
@@ -91,7 +91,7 @@ class HandTracker(AbstDetector):
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                                 fontScale=0.3,
-                                color=(0,0,0),
+                                color=(0,200,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
                     if con_pair in [(10,11)]:
@@ -100,7 +100,7 @@ class HandTracker(AbstDetector):
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                                 fontScale=0.3,
-                                color=(0,0,0),
+                                color=(0,200,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
                     if con_pair in [(18,19)]:
@@ -109,7 +109,7 @@ class HandTracker(AbstDetector):
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                                 fontScale=0.3,
-                                color=(0,0,0),
+                                color=(0,200,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
 
