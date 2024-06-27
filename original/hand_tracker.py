@@ -120,5 +120,5 @@ class HandTracker(AbstDetector):
             #正規化表現のまま使用するならこっち
             landmark_dict[hand_label] = landmark_buf
 
-        #return (image, angles.change_2D(landmark_buf))
-        return (image, landmark_buf)
+        return (image, angles.change_2D(landmark_buf))
+        #return (image, landmark_buf)
