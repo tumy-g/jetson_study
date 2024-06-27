@@ -1,14 +1,15 @@
 # -*- coding:utf-8
 
 import numpy as np
+import math
 
 #いらないかも
-def formatDict(inputList,width,height):
-    result = {}
-    for i, sublist in enumerate(inputList):
-        result[str(i)] = {'x':sublist[0]*width,'y':sublist[1]*height}
+# def formatDict(inputList,width,height):
+#     result = {}
+#     for i, sublist in enumerate(inputList):
+#         result[str(i)] = {'x':sublist[0]*width,'y':sublist[1]*height}
 
-    return result
+#     return result
 
 def change_2D(input_list:list):
     '''
@@ -65,15 +66,17 @@ def calc_angles(vectors):
 
         BA = A - B
         BC = C - B
+        #ベクトルの長さ(norm)
+        norm_AB = np.linalg.norm(BA)
+        norm_BC = np.linalg.norm(BC)
         #内積
         dot = np.inner(BA, BC)
         dots.append(dot)
-        #ベクトルの長さ(norm)
-        norm1 = np.linalg.norm(BA)
-        norm2 = np.linalg.norm(BC)
         #なす角
-        theta = np.arccos(dot/(norm1*norm2))
-        thetas.append(theta)
+        theta_rad = np.arccos(dot/(norm_AB*norm_BC))
+        #ラジアンを度数法に変換
+        theta_deg = math.degrees(theta_rad)
+        thetas.append(theta_deg)
 
     return dots, thetas
 
