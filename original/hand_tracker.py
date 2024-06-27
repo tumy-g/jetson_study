@@ -73,7 +73,7 @@ class HandTracker(AbstDetector):
                 # 円を描く用の座標
                 x = min(int(landmark.x * base_width), base_width - 1)
                 y = min(int(landmark.y * base_height), base_height - 1)
-                cv2.circle(image, (x, y), 3, landmark_color[hand_label], 5)
+                cv2.circle(image, (x, y), 2, landmark_color[hand_label], 5)
             
             for con_pair in mp.solutions.hands.HAND_CONNECTIONS:
                 # 節点の始点と終点の座標を計算する．
