@@ -1,7 +1,7 @@
 # -*- coding:utf-8
 
 import numpy as np
-
+import math
 def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
     '''
     2つのベクトルからなす角を求めて返す
@@ -20,13 +20,14 @@ def get_angle_vec(vec1:np.ndarray,vec2:np.ndarray):
 
     return theta
 
-A = np.array([5,5])
-B = np.array([1,1])
+A = np.array([5,0])
+B = np.array([0,1])
 C = np.array([10,10])
 
 hoge1 = B - A
 hoge2 = B - C
 
-hoge = get_angle_vec(hoge1,hoge2)
+theta_rad = get_angle_vec(A,B)
+theta_deg = math.degrees(theta_rad)
 
-print(hoge)
+print(theta_deg)

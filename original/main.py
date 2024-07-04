@@ -36,7 +36,15 @@ while cap.isOpened():
 
     if detector.detect(image):
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
-        print(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))
+        cv2.putText(image,
+            text=str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
+            org=(10,10),
+            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+            fontScale=0.8,
+            color=(0,0,0),
+            thickness=1,
+            lineType=cv2.LINE_4)
+        #print(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))
     
     cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
 

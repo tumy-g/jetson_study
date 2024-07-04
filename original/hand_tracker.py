@@ -90,7 +90,7 @@ class HandTracker(AbstDetector):
                                 text=str(angles.get_angles(landmark_buf)[6])[0:5],
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
+                                fontScale=0.8,
                                 color=(255,0,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
@@ -99,7 +99,7 @@ class HandTracker(AbstDetector):
                                 text=str(angles.get_angles(landmark_buf)[10])[0:5],
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
+                                fontScale=0.8,
                                 color=(255,0,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
@@ -108,7 +108,7 @@ class HandTracker(AbstDetector):
                                 text=str(angles.get_angles(landmark_buf)[18])[0:5],
                                 org=u,
                                 fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.3,
+                                fontScale=0.8,
                                 color=(255,0,0),
                                 thickness=1,
                                 lineType=cv2.LINE_4)
