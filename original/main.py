@@ -38,7 +38,7 @@ while cap.isOpened():
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
         cv2.putText(tmp_image,
             text=str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
-            org=(10,10),
+            org=(10,30),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=0.8,
             color=(0,0,0),
