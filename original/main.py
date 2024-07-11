@@ -46,7 +46,8 @@ while cap.isOpened():
             lineType=cv2.LINE_4)
         #print(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))
     
-    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
+    #cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
+    cv2.imshow('hoge', cv2.resize(tmp_image, (480, 360)))
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
