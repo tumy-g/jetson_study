@@ -25,6 +25,11 @@ detector = hand_tracker.HandTracker(
 )
 
 w, h = 960, 720
+font = cv2.FONT_HERSHEY_SIMPLEX
+font_scale = 0.8
+color = (0,0,0)
+thickness = 1
+lineType = cv2.LINE_4
 
 while cap.isOpened():
     ret, image = cap.read()
@@ -33,22 +38,23 @@ while cap.isOpened():
         break
 
     tmp_image = copy.deepcopy(image)
+
     white_image = np.ones((h, w, 3), dtype=np.uint8)*255
 
     if detector.detect(image):
         print("success capture")
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
         cv2.putText(white_image,
-            text=str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
+            text="方程式の解:"+str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
             org=(10,30),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=0.8,
             color=(0,0,0),
             thickness=1,
             lineType=cv2.LINE_4)
-        # cv2.putText(white_image, 
-        #             str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5], 
-        #             (10,300), font, font_scale, color, font_thickness)
+        cv2.putText(white_image, 
+                    "人差し指:"+str(angles.get_angles(tmp_landmark_dict)[6]), 
+                    (10,60), font, font_scale, color,thickness)
     else:
         print("fatal capture")
     
