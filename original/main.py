@@ -57,10 +57,10 @@ while cap.isOpened():
                     (10,60), font, font_scale, color,thickness)
         cv2.putText(white_image, 
                     "Middle angle:"+str(angles.get_angles(tmp_landmark_dict)[10]),
-                    (30,60), font, font_scale, color,thickness)
+                    (10,120), font, font_scale, color,thickness)
         cv2.putText(white_image, 
                     "Pinky angle:"+str(angles.get_angles(tmp_landmark_dict)[18]),
-                    (50,60), font, font_scale, color,thickness)
+                    (10,180), font, font_scale, color,thickness)
     else:
         print("fatal capture")
     
