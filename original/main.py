@@ -25,12 +25,6 @@ detector = hand_tracker.HandTracker(
 )
 
 w, h = 960, 720
-white_image = np.ones((h, w, 3), dtype=np.uint8)*255
-font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 2
-font_thickness = 3
-color = (0,0,0)
-
 
 while cap.isOpened():
     ret, image = cap.read()
@@ -39,6 +33,7 @@ while cap.isOpened():
         break
 
     tmp_image = copy.deepcopy(image)
+    white_image = np.ones((h, w, 3), dtype=np.uint8)*255
 
     if detector.detect(image):
         print("success capture")
