@@ -23,13 +23,9 @@ detector = hand_tracker.HandTracker(
     min_tracking_confidence=1,
     max_num_hands=1
 )
-h, w = 720, 960
-white_image = np.zeros((h,w,3),dtype=np.uint8)
-top_left = (w // 4, h //4)
-bottom_right = (3* w // 4, 3* h //4)
-white = (255,255,255)
-thickness = 2
-cv2.rectangle(white_image, top_left, bottom_right, white, thickness)
+white_path = './white_image.png'
+white_image = cv2.imread(white_path)
+
 
 while cap.isOpened():
     ret, image = cap.read()
