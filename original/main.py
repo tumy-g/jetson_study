@@ -58,7 +58,7 @@ while cap.isOpened():
     else:
         print("fatal capture")
     
-    #cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
+    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960//2, 720//2)))
     
     cv2.imshow('hoge',white_image)
 
