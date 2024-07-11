@@ -45,7 +45,7 @@ while cap.isOpened():
         print("success capture")
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
         cv2.putText(white_image,
-            text="方程式の解:"+str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
+            "Calc:"+str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
             org=(10,30),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=0.8,
@@ -53,7 +53,7 @@ while cap.isOpened():
             thickness=1,
             lineType=cv2.LINE_4)
         cv2.putText(white_image, 
-                    "人差し指:"+str(angles.get_angles(tmp_landmark_dict)[6]), 
+                    "Index angle:"+str(angles.get_angles(tmp_landmark_dict)[6]), 
                     (10,60), font, font_scale, color,thickness)
     else:
         print("fatal capture")
