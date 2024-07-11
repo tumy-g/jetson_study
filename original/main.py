@@ -53,7 +53,13 @@ while cap.isOpened():
             thickness=1,
             lineType=cv2.LINE_4)
         cv2.putText(white_image, 
-                    "Index angle:"+str(angles.get_angles(tmp_landmark_dict)[6]), 
+                    "Index angle:"+str(angles.get_angles(tmp_landmark_dict)[6]),
+                    (10,60), font, font_scale, color,thickness)
+        cv2.putText(white_image, 
+                    "Index angle:"+str(angles.get_angles(tmp_landmark_dict)[10]),
+                    (10,60), font, font_scale, color,thickness)
+        cv2.putText(white_image, 
+                    "Index angle:"+str(angles.get_angles(tmp_landmark_dict)[18]),
                     (10,60), font, font_scale, color,thickness)
     else:
         print("fatal capture")
