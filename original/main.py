@@ -53,7 +53,7 @@ while cap.isOpened():
             lineType=cv2.LINE_4)
         cv2.putText(white_image, 
                     str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5], 
-                    (0,100), font, font_scale, color, font_thickness)
+                    (10,300), font, font_scale, color, font_thickness)
     else:
         print("fatal capture")
     
