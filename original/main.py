@@ -23,8 +23,9 @@ detector = hand_tracker.HandTracker(
     min_tracking_confidence=1,
     max_num_hands=1
 )
-white_path = './white_image.png'
-white_image = cv2.imread(white_path)
+
+w, h = 960, 720
+white_image = np.ones((h, w, 3), dtype=np.uint8)*255
 
 
 while cap.isOpened():
@@ -49,7 +50,7 @@ while cap.isOpened():
     #cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
 
 
-    cv2.rectangle(white_image,(0,0),(960,720),255)
+    cv2.imshow('hoge',white_image)
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
