@@ -52,11 +52,14 @@ while cap.isOpened():
             thickness=1,
             lineType=cv2.LINE_4)
         text = angles.get_angles(tmp_landmark_dict)[6]
+        cv2.putText(white_image, text, (100,100), font, font_scale, color, font_thickness)
     else:
+        text = "hoge"
+        cv2.putText(white_image, text, (100,100), font, font_scale, color, font_thickness)
         print("fatal capture")
     
     #cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
-    cv2.putText(white_image, text, (100,100), font, font_scale, color, font_thickness)
+    
     cv2.imshow('hoge',white_image)
 
     key = cv2.waitKey(1) & 0xFF
