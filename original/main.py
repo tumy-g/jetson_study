@@ -51,7 +51,9 @@ while cap.isOpened():
             color=(0,0,0),
             thickness=1,
             lineType=cv2.LINE_4)
-        cv2.putText(white_image, str(angles.get_angles(tmp_landmark_dict)[6]), (0,100), font, font_scale, color, font_thickness)
+        cv2.putText(white_image, 
+                    str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5], 
+                    (0,100), font, font_scale, color, font_thickness)
     else:
         print("fatal capture")
     
