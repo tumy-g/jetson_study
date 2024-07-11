@@ -49,7 +49,7 @@ while cap.isOpened():
     #cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
 
 
-    cv2.imshow('hoge', white_image)
+    cv2.imshow('hoge', cv2.resize(white_image, (960,720)))
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
