@@ -27,8 +27,8 @@ detector = hand_tracker.HandTracker(
 w, h = 960, 720
 white_image = np.ones((h, w, 3), dtype=np.uint8)*255
 font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 3
-font_thickness = 5
+font_scale = 2
+font_thickness = 3
 color = (0,0,0)
 
 
@@ -52,10 +52,8 @@ while cap.isOpened():
             thickness=1,
             lineType=cv2.LINE_4)
         text = str(angles.get_angles(tmp_landmark_dict)[6])
-        cv2.putText(white_image, text, (100,100), font, font_scale, color, font_thickness)
+        cv2.putText(white_image, text, (0,100), font, font_scale, color, font_thickness)
     else:
-        text = "hoge"
-        cv2.putText(white_image, text, (100,100), font, font_scale, color, font_thickness)
         print("fatal capture")
     
     #cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960, 720)))
