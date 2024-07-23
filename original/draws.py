@@ -5,8 +5,8 @@ def draw_result(image, x1, y1, x2, y2):
     pt1a = (x1, y1)
     pt2a = (x2, y2)
 
-    pt1b = (x1 + 50, y1)
-    pt2b = (x2 + 50, y2)
+    pt1b = (x1, y1+10)
+    pt2b = (x2, y2+10)
 
     green = (0,255,0)
     thickness = 2
