@@ -60,11 +60,11 @@ while cap.isOpened():
             thickness=1,
             lineType=cv2.LINE_4)
         
-        draws.draw_result(white_image, 0, 0, int(calc_result*300), 50)
-        draws.draw_finger_angle(white_image, "Index", index_angle,0, 90, int(index_angle*4), 140)
-        draws.draw_finger_angle(white_image, "Middle", middle_angle,0, 180, int(middle_angle*4), 230)
-        draws.draw_finger_angle(white_image, "Pinky", pinky_angle,0, 270, int(pinky_angle*4), 320)
-        cv2.line(white_image, (300,20), (300, 440), color=(255,0,0))
+        draws.draw_result(white_image, 0, 50, int(calc_result*300), 100)
+        draws.draw_finger_angle(white_image, "Index", index_angle,0, 140, int(index_angle*4), 190)
+        draws.draw_finger_angle(white_image, "Middle", middle_angle,0, 230, int(middle_angle*4), 280)
+        draws.draw_finger_angle(white_image, "Pinky", pinky_angle,0, 320, int(pinky_angle*4), 370)
+        cv2.line(white_image, (300,20), (300, 500), color=(255,0,0))
     else:
         print("fatal capture")
     
