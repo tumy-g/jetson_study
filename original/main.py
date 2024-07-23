@@ -45,7 +45,12 @@ while cap.isOpened():
     if detector.detect(image):
         print("success capture")
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
+
         calc_result = calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18])
+        index_angle = angles.get_angles(tmp_landmark_dict)[6]
+        middle_angle = angles.get_angles(tmp_landmark_dict)[10]
+        pinky_angle = angles.get_angles(tmp_landmark_dict)[18]
+
         cv2.putText(white_image,
             "Calc:"+str(calc_result)[0:5],
             org=(10,30),
@@ -55,16 +60,20 @@ while cap.isOpened():
             thickness=1,
             lineType=cv2.LINE_4)
         cv2.putText(white_image, 
-                    "Index angle:"+str(angles.get_angles(tmp_landmark_dict)[6]),
+                    "Index angle:"+str(index_angle),
                     (10,60), font, font_scale, color,thickness)
         cv2.putText(white_image, 
-                    "Middle angle:"+str(angles.get_angles(tmp_landmark_dict)[10]),
+                    "Middle angle:"+str(middle_angle),
                     (10,120), font, font_scale, color,thickness)
         cv2.putText(white_image, 
-                    "Pinky angle:"+str(angles.get_angles(tmp_landmark_dict)[18]),
+                    "Pinky angle:"+str(pinky_angle),
                     (10,180), font, font_scale, color,thickness)
         
         draws.draw_result(white_image, 0, 230, int(calc_result*300), 280)
+        draws.draw_finger_angle(white_image, "Index", 0, 290, int(1), 340)
+        draws.draw_finger_angle(white_image, "Middle", 0, 350, int(1), 400)
+        draws.draw_finger_angle(white_image, "Pinky", 0, 410, int(1), 460)
+
     else:
         print("fatal capture")
     
