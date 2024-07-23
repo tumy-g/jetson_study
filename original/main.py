@@ -59,21 +59,12 @@ while cap.isOpened():
             color=(0,0,0),
             thickness=1,
             lineType=cv2.LINE_4)
-        # cv2.putText(white_image, 
-        #             "Index angle:"+str(index_angle),
-        #             (0,320), font, font_scale, color,thickness)
-        # cv2.putText(white_image, 
-        #             "Middle angle:"+str(middle_angle),
-        #             (0,410), font, font_scale, color,thickness)
-        # cv2.putText(white_image, 
-        #             "Pinky angle:"+str(pinky_angle),
-        #             (0,500), font, font_scale, color,thickness)
         
-        draws.draw_result(white_image, 0, 230, int(calc_result*300), 280)
-        draws.draw_finger_angle(white_image, "Index", index_angle,0, 320, int(index_angle*4), 370)
-        draws.draw_finger_angle(white_image, "Middle", middle_angle,0, 410, int(middle_angle*4), 460)
-        draws.draw_finger_angle(white_image, "Pinky", pinky_angle,0, 500, int(pinky_angle*4), 550)
-        cv2.line(white_image, (300,200), (300, 450), color=(255,0,0))
+        draws.draw_result(white_image, 0, 0, int(calc_result*300), 50)
+        draws.draw_finger_angle(white_image, "Index", index_angle,0, 90, int(index_angle*4), 140)
+        draws.draw_finger_angle(white_image, "Middle", middle_angle,0, 180, int(middle_angle*4), 230)
+        draws.draw_finger_angle(white_image, "Pinky", pinky_angle,0, 270, int(pinky_angle*4), 320)
+        cv2.line(white_image, (300,20), (300, 440), color=(255,0,0))
     else:
         print("fatal capture")
     
