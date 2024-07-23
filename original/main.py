@@ -45,8 +45,9 @@ while cap.isOpened():
     if detector.detect(image):
         print("success capture")
         tmp_image, tmp_landmark_dict = detector.draw(tmp_image)
+        calc_result = calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18])
         cv2.putText(white_image,
-            "Calc:"+str(calc_equation.formula(angles.get_angles(tmp_landmark_dict)[6],angles.get_angles(tmp_landmark_dict)[10],angles.get_angles(tmp_landmark_dict)[18]))[0:5],
+            "Calc:"+str(calc_result)[0:5],
             org=(10,30),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=0.8,
@@ -63,7 +64,7 @@ while cap.isOpened():
                     "Pinky angle:"+str(angles.get_angles(tmp_landmark_dict)[18]),
                     (10,180), font, font_scale, color,thickness)
         
-        draws.draw_rectangle(white_image, 10, 10, 40, 40)
+        draws.draw_rectangle(white_image, 10, 200, 40, 240)
     else:
         print("fatal capture")
     
