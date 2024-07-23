@@ -8,6 +8,7 @@ import mediapipe as mp
 import hand_tracker
 import angles
 import calc_equation
+import draws
 
 #初期設定
 mp_drawing = mp.solutions.drawing_utils
@@ -61,12 +62,15 @@ while cap.isOpened():
         cv2.putText(white_image, 
                     "Pinky angle:"+str(angles.get_angles(tmp_landmark_dict)[18]),
                     (10,180), font, font_scale, color,thickness)
+        
+        draws.draw_rectangle(white_image, 10, 10, 40, 40)
     else:
         print("fatal capture")
     
-    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960//2, 720//2)))
     
     cv2.imshow('hoge',white_image)
+    cv2.imshow('hand_tracker', cv2.resize(tmp_image, (960//2, 720//2)))
+    
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
