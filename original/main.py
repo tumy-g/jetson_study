@@ -70,7 +70,7 @@ while cap.isOpened():
                     (10,180), font, font_scale, color,thickness)
         
         draws.draw_result(white_image, 0, 230, int(calc_result*300), 280)
-        draws.draw_finger_angle(white_image, "Index", 0, 290, int(index_angle*4), 340)
+        draws.draw_finger_angle(white_image, "Index", 0, 320, int(index_angle*4), 370)
         draws.draw_finger_angle(white_image, "Middle", 0, 350, int(middle_angle*4), 400)
         draws.draw_finger_angle(white_image, "Pinky", 0, 410, int(pinky_angle*4), 460)
         cv2.line(white_image, (300,200), (300, 450), color=(255,0,0))
