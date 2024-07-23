@@ -64,7 +64,7 @@ while cap.isOpened():
                     "Pinky angle:"+str(angles.get_angles(tmp_landmark_dict)[18]),
                     (10,180), font, font_scale, color,thickness)
         
-        draws.draw_rectangle(white_image, int(calc_result*100), 200, int(calc_result*100)+40, 240)
+        draws.draw_rectangle(white_image, int(calc_result*150), 200, int(calc_result*150)+40, 240)
     else:
         print("fatal capture")
     
