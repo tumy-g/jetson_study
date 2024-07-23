@@ -70,9 +70,9 @@ while cap.isOpened():
                     (10,180), font, font_scale, color,thickness)
         
         draws.draw_result(white_image, 0, 230, int(calc_result*300), 280)
-        draws.draw_finger_angle(white_image, "Index", 0, 290, int(1), 340)
-        draws.draw_finger_angle(white_image, "Middle", 0, 350, int(1), 400)
-        draws.draw_finger_angle(white_image, "Pinky", 0, 410, int(1), 460)
+        draws.draw_finger_angle(white_image, "Index", 0, 290, int(index_angle*50), 340)
+        draws.draw_finger_angle(white_image, "Middle", 0, 350, int(middle_angle*50), 400)
+        draws.draw_finger_angle(white_image, "Pinky", 0, 410, int(pinky_angle*50), 460)
 
     else:
         print("fatal capture")
