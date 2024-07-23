@@ -53,7 +53,7 @@ while cap.isOpened():
 
         cv2.putText(white_image,
             "Calc:"+str(calc_result)[0:5],
-            org=(10,30),
+            org=(0,230),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=0.8,
             color=(0,0,0),
@@ -61,13 +61,13 @@ while cap.isOpened():
             lineType=cv2.LINE_4)
         cv2.putText(white_image, 
                     "Index angle:"+str(index_angle),
-                    (10,60), font, font_scale, color,thickness)
+                    (0,320), font, font_scale, color,thickness)
         cv2.putText(white_image, 
                     "Middle angle:"+str(middle_angle),
-                    (10,120), font, font_scale, color,thickness)
+                    (0,410), font, font_scale, color,thickness)
         cv2.putText(white_image, 
                     "Pinky angle:"+str(pinky_angle),
-                    (10,180), font, font_scale, color,thickness)
+                    (0,500), font, font_scale, color,thickness)
         
         draws.draw_result(white_image, 0, 230, int(calc_result*300), 280)
         draws.draw_finger_angle(white_image, "Index", 0, 320, int(index_angle*4), 370)
