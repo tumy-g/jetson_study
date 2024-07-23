@@ -6,7 +6,7 @@ thickness = 2
 font = cv2.FONT_HERSHEY_SIMPLEX
 font_scale = 0.8
 black = (0,0,0)
-thickness = 1
+thickness = -1
 
 def draw_result(image, x1, y1, x2, y2)->None:
     pt = (x1, y1)
