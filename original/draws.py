@@ -14,7 +14,7 @@ def draw_result(image, x1, y1, x2, y2)->None:
     pt1b = (x1, y1+10)
     pt2b = (x2, y2+10)
 
-    cv2.putText(image, "Calc:", pt, font, font_scale, black, thickness)
+    cv2.putText(image, "Calc:", pt, font, font_scale, black, thickness=1)
     cv2.rectangle(image, pt1b, pt2b, green, thickness)
 
 def draw_finger_angle(image, name:str, x1, y1, x2, y2)->None:
@@ -23,5 +23,5 @@ def draw_finger_angle(image, name:str, x1, y1, x2, y2)->None:
     pt1b = (x1, y1+10)
     pt2b = (x2, y2+10)
     
-    cv2.putText(image, name, pt, font, font_scale, black, thickness)
+    cv2.putText(image, name, pt, font, font_scale, black, thickness=1)
     cv2.rectangle(image, pt1b, pt2b, green, thickness)
