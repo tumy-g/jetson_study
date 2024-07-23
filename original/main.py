@@ -50,15 +50,6 @@ while cap.isOpened():
         index_angle = angles.get_angles(tmp_landmark_dict)[6]
         middle_angle = angles.get_angles(tmp_landmark_dict)[10]
         pinky_angle = angles.get_angles(tmp_landmark_dict)[18]
-
-        cv2.putText(white_image,
-            "Calc:"+str(calc_result)[0:5],
-            org=(0,230),
-            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-            fontScale=0.8,
-            color=(0,0,0),
-            thickness=1,
-            lineType=cv2.LINE_4)
         
         draws.draw_result(white_image, 0, 50, int(calc_result*300), 100)
         draws.draw_finger_angle(white_image, "Index", index_angle,0, 140, int(index_angle*4), 190)
