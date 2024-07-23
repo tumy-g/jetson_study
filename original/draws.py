@@ -15,5 +15,5 @@ def draw_result(image, x1, y1, x2, y2):
     black = (0,0,0)
     thickness = 1
 
-    cv2.putText(image, "計算結果:", pt1a, font, font_scale, black, thickness)
+    cv2.putText(image, "Calc:", pt1a, font, font_scale, black, thickness)
     cv2.rectangle(image, pt1b, pt2b, green, thickness)
