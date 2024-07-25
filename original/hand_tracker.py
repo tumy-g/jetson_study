@@ -85,33 +85,33 @@ class HandTracker(AbstDetector):
                     if hand_label == 'Left':
                         continue
                     cv2.line(image, u, v, landmark_color["stress"], 10)
-                    if con_pair in [(6,7)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[6])[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.8,
-                                color=(255,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(10,11)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[10])[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.8,
-                                color=(255,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
-                    if con_pair in [(18,19)]:
-                        cv2.putText(image,
-                                text=str(angles.get_angles(landmark_buf)[18])[0:5],
-                                org=u,
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                fontScale=0.8,
-                                color=(255,0,0),
-                                thickness=1,
-                                lineType=cv2.LINE_4)
+                    # if con_pair in [(6,7)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[6])[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.8,
+                    #             color=(255,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(10,11)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[10])[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.8,
+                    #             color=(255,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
+                    # if con_pair in [(18,19)]:
+                    #     cv2.putText(image,
+                    #             text=str(angles.get_angles(landmark_buf)[18])[0:5],
+                    #             org=u,
+                    #             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    #             fontScale=0.8,
+                    #             color=(255,0,0),
+                    #             thickness=1,
+                    #             lineType=cv2.LINE_4)
 
             # ランドマークが欠損している場合は例外処理
             if len(landmark_buf) % 21 != 0:
