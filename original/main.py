@@ -51,7 +51,7 @@ while cap.isOpened():
         middle_angle = angles.get_angles(tmp_landmark_dict)[10]
         pinky_angle = angles.get_angles(tmp_landmark_dict)[18]
         
-        draws.draw_result(white_image, 0, 50, int(calc_result*300), 100)
+        draws.draw_result(white_image, calc_result, 0, 50, int(calc_result*300), 100)
         draws.draw_finger_angle(white_image, "Index", index_angle,0, 140, int(index_angle*4), 190)
         draws.draw_finger_angle(white_image, "Middle", middle_angle,0, 230, int(middle_angle*4), 280)
         draws.draw_finger_angle(white_image, "Pinky", pinky_angle,0, 320, int(pinky_angle*4), 370)
