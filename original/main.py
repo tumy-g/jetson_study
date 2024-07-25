@@ -66,7 +66,7 @@ while cap.isOpened():
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s'):
-        cv2.imwrite('../img_sacrifice/screenshot.png', tmp_image)
+        cv2.imwrite('screenshot.png', tmp_image)
     if key == ord('q'):
         print("Quit program")
         print("landmarks:",len(tmp_landmark_dict),tmp_landmark_dict)
